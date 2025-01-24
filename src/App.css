@@ -1,0 +1,60 @@
+/* General App layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height */
+}
+
+.main-content {
+  flex: 1; /* Fills the space between navbar and footer */
+}
+
+/* Footer styles */
+.footer-dark {
+  background-color: #212529; /* Dark background */
+  color: #ffffff; /* White text */
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  width: 100%; /* Ensures footer spans the page width */
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Navbar logo styles */
+.navbar-brand img {
+  width: 50px; /* Fixed width for logo */
+  height: auto;
+}
+
+/* Category Card Styles */
+.card {
+  width: 20rem; /* Fixed card width */
+  height: 30rem; /* Fixed card height */
+  overflow: hidden; /* Prevent overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  height: 200px; /* Fixed image height */
+  object-fit: cover; /* Ensure image fits the card */
+  width: 100%; /* Full width */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Search Bar (optional) */
+.form-control {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+/* Navbar logo styles */
+.navbar-brand img {
+  max-width: 100%; /* Ensures the logo fits within its container */
+  height: auto;    /* Maintains the aspect ratio */
+  display: block;  /* Prevents inline spacing issues */
+  max-height: 60px; /* Optional: Limits the maximum height */
+}
