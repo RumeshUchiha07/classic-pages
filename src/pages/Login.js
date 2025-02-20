@@ -10,10 +10,10 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();  // Prevent default form submission
 
-    // Dummy authentication check (Replace with API call)
+    // Dummy authentication check (Replace this with an API call)
     if (email === "admin@example.com" && password === "password") {
       alert("Login Successful!");
-      navigate("/src/pages/Home.js"); // Redirect to home page
+      navigate("/");  // Redirect to home page
     } else {
       alert("Invalid credentials. Please try again.");
     }
@@ -25,28 +25,34 @@ const Login = () => {
       <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control 
-            type="email" 
-            placeholder="Enter email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control 
-            type="password" 
-            placeholder="Password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </Form.Group>
+
         <Button variant="primary" type="submit" className="w-100">
           Login
         </Button>
       </Form>
+
+      <p className="mt-3">
+        Don't have an account? <Button variant="link" onClick={() => navigate("/register")}>Register</Button>
+      </p>
     </Container>
   );
 };
