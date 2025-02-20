@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();  // Prevent default form submission
 
     // Dummy authentication check (Replace this with an API call)
-    if (email === "admin@example.com" && password === "password") {
+    if (email === "bava@gmail.com" && password === "password") {
       alert("Login Successful!");
       navigate("/");  // Redirect to home page
     } else {
