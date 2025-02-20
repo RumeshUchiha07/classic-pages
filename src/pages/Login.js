@@ -1,19 +1,47 @@
-// pages/Login.js
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";  // Import useNavigate for redirection
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();  // Initialize navigation
+
+  const handleLogin = (e) => {
+    e.preventDefault();  // Prevent default form submission
+
+    // Dummy authentication check (Replace with API call)
+    if (email === "admin@example.com" && password === "password") {
+      alert("Login Successful!");
+      navigate("/src/pages/Home.js"); // Redirect to home page
+    } else {
+      alert("Invalid credentials. Please try again.");
+    }
+  };
+
   return (
     <Container className="mt-5" style={{ maxWidth: "400px" }}>
       <h2>Login</h2>
-      <Form>
+      <Form onSubmit={handleLogin}>
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control 
+            type="email" 
+            placeholder="Enter email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required 
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control 
+            type="password" 
+            placeholder="Password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required 
+          />
         </Form.Group>
         <Button variant="primary" type="submit" className="w-100">
           Login
